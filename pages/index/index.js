@@ -77,6 +77,12 @@ Page({
             url: `/pages/detail/detail?id=${e.currentTarget.dataset.id}`,
         })
     },
+    
+    goUser () {
+        wx.navigateTo({
+            url: `/pages/user/user`,
+        })
+    },
 
     // 获取列表数据
     loadList () {
@@ -93,6 +99,7 @@ Page({
             success: (res) => {
                 console.log(res.data); 
                 list.push(...res.data.cityList);
+                console.log(list)
                 this.setData({
                     list,
                     loading: false

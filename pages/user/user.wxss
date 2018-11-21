@@ -1,0 +1,18 @@
+/* pages/user/user.wxss */
+.user {
+    font-size: 14px; 
+    text-align: center;
+    padding-top: 10px;
+}
+.user view {
+    text-align: center; 
+    padding: 10px 0;
+}
+.user image {
+    animation: avator linear 10s infinite normal;
+}
+@keyframes avator
+{
+	0%   { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}

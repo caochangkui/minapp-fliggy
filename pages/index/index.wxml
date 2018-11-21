@@ -2,7 +2,7 @@
 <scroll-view scroll-y="true" style='height:100%;' lower-threshold="50" bindscrolltolower="lower">
     <view class='top'>
         <text>fliggy</text>
-        <image class='user' src='/assets/images/user.png' mode='widthFix'></image>
+        <image class='user' bindtap='goUser' src='/assets/images/user.png' mode='widthFix'></image>
         <input placeholder='云南旅游'></input>
     </view> 
     <swiper class='swiper' indicator-dots="{{indicatorDots}}" indicator-color="{{indicatorColor}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
