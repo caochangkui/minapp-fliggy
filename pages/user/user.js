@@ -24,11 +24,22 @@ Page({
     }, 
     getUser(e) {
         console.log(e)
-        wx.getUserInfo({
-            success: (res) => {
-                console.log(res) 
+        wx.showModal({
+            title: '请求授权',
+            content: '是否授权用户信息？',
+            success(res) {
+                if (res.confirm) {
+                    wx.getUserInfo({
+                        success: (res) => {
+                            console.log(res)
+                        }
+                    })
+                } else if (res.cancel) {
+                    console.log('用户点击取消')
+                }
             }
         })
+        
     },
 
     // 存储信息到storage
