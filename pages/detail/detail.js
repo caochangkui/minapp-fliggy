@@ -23,7 +23,7 @@ Page({
         })
 
         wx.request({
-            url: 'http://127.0.0.1:3000/list',
+            url: 'http://10.0.1.109:3000/list',
             success: (res) => {
                 console.log(res.data.cityList);
                 let thisPlace = res.data.cityList.filter((val) => val.id == id)

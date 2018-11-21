@@ -6,7 +6,7 @@
 }
 .user view {
     text-align: center; 
-    padding: 10px 0;
+    padding: 4px 0;
 }
 .user image {
     animation: avator linear 10s infinite normal;
