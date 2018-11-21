@@ -1,0 +1,65 @@
+<!--pages/detail/detail.wxml-->
+<view class='detail' wx:if="{{!loading}}">
+    <view class='top'>
+        <image src='{{detail.detail.banner}}' mode='widthFix'></image>
+        <view style='color: red;padding: 2px 10px;'>￥{{detail.price}}</view>
+        <view style='font-size: 14px;padding: 10px;'>{{detail.detail.title}}</view>
+        <view style='color: #666;font-size: 12px;padding: 2px 10px;'>月销 689 笔</view>
+    </view>
+    <view class='tips'>
+        <view>
+            <icon type="success" size="16" color='#ffd101' />
+            <text> <icon type="success" size="20" color='red'/>承诺不加价</text>
+        </view>
+        <view>
+            <icon type="info" size="16" color='#ffd101' />
+            <text> <icon type="success" size="20" color='red'/>出游有保障</text>
+        </view>
+        <view>
+            <icon type="warn" size="16" color='#ffd101' />
+            <text> <icon type="success" size="20" color='purple'/>更改则赔付</text>
+        </view>
+    </view>
+    <view class='server'>
+        <text>服务：</text>
+        <text>该商品在支付成功后需等待卖家确认，平均确认时长2小时32分钟，通过率69%</text>
+    </view>
+    <view class='comment'>
+        <text style='fonts:14px;display: block; font-weight:bold;padding:10px 0;'>宝贝评价(69)</text>
+        <view>
+            <text>价格实惠(11)</text>
+            <text>安排行程可以(8)</text>
+            <text>服务到位(5)</text>
+            <text>交通不错(19)</text>
+            <text>旅行社不错(3)</text>
+        </view> 
+    </view>
+    <view class='comment'>
+        <text style='fonts:14px;display: block; font-weight:bold;padding:10px 0;'>图文介绍</text>
+        <view>
+        <image src='https://img.alicdn.com/imgextra/i1/3433659950/TB2AvHaH79WBuNjSspeXXaz5VXa_!!3433659950.jpg_q60.jpg_.webp' mode='widthFix' style='width: 100%;'></image>
+        <image src='https://img.alicdn.com/imgextra/i1/3433659950/TB2VbEfs1GSBuNjSspbXXciipXa_!!3433659950.jpg_q60.jpg_.webp' mode='widthFix' style='width: 100%;'></image>
+        <image src='https://img.alicdn.com/imgextra/i4/3433659950/O1CN012NN9Jz64EFa45iR_!!3433659950.jpg_q60.jpg_.webp' mode='widthFix' style='width: 100%;'></image>
+        <image src='https://img.alicdn.com/imgextra/i4/3433659950/TB2W1YvoiMnBKNjSZFoXXbOSFXa_!!3433659950.jpg_q60.jpg_.webp' mode='widthFix' style='width: 100%;'></image> 
+        </view> 
+    </view>
+    <view class='option'>
+        <view class='left'>
+            <view>
+                <image src='/assets/images/user.png'></image>
+                <text>客服</text>
+            </view>
+            <view>
+                <image src='/assets/images/index.png'></image>
+                <text>店铺</text>
+            </view>
+        </view>
+        <view class='right'>
+            <view class='in'>加入购物车</view>
+            <view class='buy'>立即购买</view>
+        </view>
+
+    </view>
+
+
+</view>

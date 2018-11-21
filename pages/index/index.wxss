@@ -1,0 +1,149 @@
+/* pages/index/index.wxss */
+.top {
+    background: #fedb00;
+    height: 300rpx;
+    position: relative;
+    padding: 10rpx 20rpx;
+}
+.top .user {
+    width: 50rpx;
+    height: 60rpx;
+    position: absolute;
+    top: 10rpx;
+    right: 10rpx;
+}
+.top text {
+    display: block;
+    text-align: center;
+    height: 60rpx;
+    font-style: oblique;
+    font-weight: bold;
+    letter-spacing: 2rpx;
+}
+.top input {
+    text-decoration: none;
+    border: 1px solid #fff; 
+    box-sizing: border-box; 
+    border-top-left-radius: 42.6667px;
+    border-bottom-right-radius: 42.6667px;
+    border-bottom-left-radius: 42.6667px;
+    background-color: #fff; 
+    padding-left: 30rpx;
+    margin-top: 8rpx;
+    font-size: 28rpx;
+}
+
+swiper {
+    height: 240rpx;
+    padding: 0 30rpx;
+    position: relative;
+    transform: translate(0,-160rpx);
+    margin-bottom: -160rpx;
+    overflow: hidden;
+}
+
+.slide-image {
+    width: 100%;
+    height: 240rpx;
+    border-radius: 14rpx;
+}
+.category {
+    width: 100%;
+    padding: 16rpx 0; 
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.category view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.category image {
+    height: 120rpx;
+    width: 120rpx;
+}
+.category text {
+    font-size: 28rpx;
+} 
+.place {
+    padding: 12rpx 0;
+    width: 100%;
+    height:280rpx;
+    overflow:hidden; 
+}
+.block .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18rpx;
+}
+.block .title text {
+    font-size: 40rpx;
+    font-weight: bold;
+}
+.block .title .more {
+    font-size: 28rpx;
+    font-weight: 400;
+    color: #666;
+}
+.scroll-view { 
+    width: 100%;
+    height: 240rpx;
+    white-space:nowrap;
+
+}
+.scroll-view view {
+    width:200rpx;
+    height:200rpx; 
+    padding: 0 16rpx; 
+    box-sizing:content-box;
+    display:inline-block; 
+    position: relative;
+}
+.scroll-view view image {
+    width:200rpx;
+    height:200rpx; 
+    border-radius: 10rpx;
+    opacity: .9;
+}
+.scroll-view view text {
+    font-size: 32rpx;
+    font-weight: bold;
+    color: #fff;
+    position: absolute;
+    bottom: 20rpx;
+    left: 40rpx;
+}
+
+.like {
+    height: auto;
+}
+.like .list .box {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 50%;
+    padding: 10rpx;
+    text-align: center;
+}
+.like .list view image {
+    height: 360rpx;
+    width: 300rpx;
+}
+.like .list .tip text {
+    font-size: 28rpx;
+    color: #444;
+}
+.like .list .tip .price {
+    font-size: 24rpx;
+    color: red;
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,52 @@
+<!--pages/index/index.wxml-->
+<scroll-view scroll-y="true" style='height:100%;' lower-threshold="50" bindscrolltolower="lower">
+    <view class='top'>
+        <text>fliggy</text>
+        <image class='user' src='/assets/images/user.png' mode='widthFix'></image>
+        <input placeholder='云南旅游'></input>
+    </view> 
+    <swiper class='swiper' indicator-dots="{{indicatorDots}}" indicator-color="{{indicatorColor}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{imgUrls}}"  wx:key='{{index}}'>
+            <swiper-item> 
+            <image src="{{item}}" class="slide-image" />
+            </swiper-item>
+        </block>
+    </swiper>
+    <view class='category'>
+        <view wx:for="{{category}}" wx:key='{{index}}'>
+            <image src='{{item.img}}' mode='aspectFit'></image>
+            <text>{{item.title}}</text>
+        </view>
+    </view>
+    <view class='place block'>
+        <view class='title'>
+            <text>当季旅游地</text>
+            <text class='more'>探索更好目的地 ></text>
+        </view>
+        <scroll-view class="scroll-view" scroll-x >
+            <view wx:for='{{scroll}}' wx:key='{{index}}'>
+                <image src='{{item.img}}'></image>
+                <text>{{item.title}}</text>
+            </view>  
+        </scroll-view>
+    </view>
+    <view class='like block'>
+        <view class='title'>
+            <text>猜你喜欢</text>
+            <text class='more'>您想要的旅行好货 </text>
+        </view>
+        <view class="list"  >
+            <view class='box'  wx:for='{{list}}' wx:key='{{index}}' data-id='{{item.id}}' bindtap='goDetail'>
+                <image src='{{item.img}}'></image>
+                <view class='tip'>
+                    <text>{{item.title}}</text>
+                    <text class='price'>￥{{item.price}}</text>
+                </view> 
+            </view> 
+        </view>
+    </view>
+     <view class='loading' wx:if="{{loading}}" style='text-align:center;'>
+      <image class='' src='/assets/loading/loading-bars.svg'  style='height: 60px;'></image>
+    </view>
+
+</scroll-view>
