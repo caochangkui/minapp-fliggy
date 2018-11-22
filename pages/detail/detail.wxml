@@ -53,6 +53,10 @@
                 <image src='/assets/images/index.png'></image>
                 <text>店铺</text>
             </view>
+            <view>
+                <image src='/assets/images/car.png'></image>
+                <text>购物车</text>
+            </view>
         </view>
         <view class='right'>
             <view class='in'>加入购物车</view>

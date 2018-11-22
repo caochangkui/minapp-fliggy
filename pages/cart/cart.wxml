@@ -1,0 +1,5 @@
+<!--pages/cart/cart.wxml-->
+<view class='cart' style='text-align:center;'>
+<text>购物车空空如也~~</text>
+    
+</view>

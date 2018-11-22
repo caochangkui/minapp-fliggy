@@ -91,15 +91,14 @@ swiper {
 .scroll-view { 
     width: 100%;
     height: 240rpx;
-    white-space:nowrap;
-
+    white-space:nowrap;  /* 规定段落中的文本不进行换行 */
 }
 .scroll-view view {
     width:200rpx;
     height:200rpx; 
     padding: 0 16rpx; 
     box-sizing:content-box;
-    display:inline-block; 
+    display:inline-block;  /* 设置行内块元素 */
     position: relative;
 }
 .scroll-view view image {

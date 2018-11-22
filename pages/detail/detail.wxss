@@ -59,10 +59,10 @@
     width: 40rpx;
 }
 .option .left {
-    flex: 2;
+    flex: 1;
 }
 .option .right {
-    flex: 3; 
+    flex: 1; 
 }
 .option .left,.option .right {
     display: flex;

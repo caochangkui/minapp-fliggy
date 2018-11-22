@@ -1,4 +1,4 @@
-/* pages/user/user.wxss */
+/* pages/user/user.wxss */ 
 .user {
     font-size: 14px; 
     text-align: center;

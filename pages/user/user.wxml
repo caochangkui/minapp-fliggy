@@ -4,7 +4,7 @@
   <view>性别： {{ userInfo.gender ? '男' : '女' }}</view>
   <view>国籍： {{ userInfo.country}}</view>
   <view>城市： {{ userInfo.province}}</view>
-  <image src='{{ userInfo.avatarUrl }}'  style='height: 200rpx;width:200rpx;text-align:center;border-radius: 50%;'></image>
+  <image src='{{ userInfo.avatarUrl }}'  style='height: 160rpx;width:160rpx;text-align:center;border-radius: 50%;'></image>
 </view>
 
  <button open-type="getUserInfo" bindgetuserinfo='getUser'>获取用户信息(授权登录)</button>

@@ -60,6 +60,7 @@ Page({
     }, 
     onLoad: function () {
         this.loadList();
+        console.log('从app.js拿到全局变量：', getApp().globalData); 
     },
 
     // 上拉加载
@@ -68,6 +69,7 @@ Page({
         if (!this.data.loading) {
             this.loadList();
         }
+        console.log('从app.js拿到全局变量：', getApp().globalData); 
     },
 
     // 进入详情页
