@@ -80,8 +80,9 @@ Page({
         })
     },
     
-    goUser () {
-        wx.navigateTo({
+    goUser () { 
+        // 注意： 这里跳转的user是一个tabBar页面，redirectTo 只能打开非 tabBar 页面 ，所以需要使用wx.switchTab
+        wx.switchTab({
             url: `/pages/user/user`,
         })
     },

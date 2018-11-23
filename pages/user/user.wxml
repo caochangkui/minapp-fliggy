@@ -1,12 +1,16 @@
 <!--pages/user/user.wxml--> 
 <view class='user'>
   <view>用户名： {{ userInfo.nickName }}</view>
-  <view>性别： {{ userInfo.gender ? '男' : '女' }}</view>
+  <view>性别： <open-data type="userGender" lang="zh_CN"></open-data></view>
   <view>国籍： {{ userInfo.country}}</view>
-  <view>城市： {{ userInfo.province}}</view>
+  <view>城市： {{ userInfo.province}}</view> 
+
   <image src='{{ userInfo.avatarUrl }}'  style='height: 160rpx;width:160rpx;text-align:center;border-radius: 50%;'></image>
 </view>
 
  <button open-type="getUserInfo" bindgetuserinfo='getUser'>获取用户信息(授权登录)</button>
+ <button bindtap='onAuthLocation' >授权位置</button>
+ <button bindtap='onGetLocation' >获取位置</button>
+ <button bindtap='gotoSetting' >打开授权信息面板</button>
  <button bindtap='set'>设置</button>
  <button bindtap='get'>获取</button> 

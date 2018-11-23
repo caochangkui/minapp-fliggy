@@ -21,7 +21,7 @@
     <view class='place block'>
         <view class='title'>
             <text>当季旅游地</text>
-            <text class='more'>探索更好目的地 ></text>
+            <text class='more'>探索更好目的地 > </text>
         </view>
         <scroll-view class="scroll-view" scroll-x >
             <view wx:for='{{scroll}}' wx:key='{{index}}'>

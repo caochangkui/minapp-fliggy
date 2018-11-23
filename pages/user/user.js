@@ -13,6 +13,12 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        console.log('从app.js拿到全局变量：', getApp().globalData); 
+    }, 
+    
+    getUser(e) {
+        console.log('=========')
+        console.log(e)
         wx.getUserInfo({
             success: (res) => {
                 console.log(res)
@@ -21,28 +27,41 @@ Page({
                 });
             }
         })
-    }, 
-    getUser(e) {
-        console.log(e)
-        wx.showModal({
-            title: '请求授权',
-            content: '是否授权用户信息？',
-            success(res) {
-                if (res.confirm) {
-                    wx.getUserInfo({
-                        success: (res) => {
-                            console.log(res)
-                        }
-                    })
-                } else if (res.cancel) {
-                    console.log('用户点击取消')
-                }
-            }
-        })
         
     },
 
-    // 存储信息到storage
+    onAuthLocation() {
+        wx.authorize({
+            scope: 'scope.userLocation',
+            success: (res) => {
+                console.log('成功：' , res)
+            },
+            fail: (res) => {
+                console.log('失败：', res)
+            },
+        })
+    },
+
+    onGetLocation() {
+        wx.getLocation({ 
+            success: (res) => {
+                console.log('成功：', res)
+            },
+            fail: (res) => {
+                console.log('失败：', res)
+            },
+        })
+    },
+
+    gotoSetting() {
+        wx.openSetting({
+            success: (res) => {
+                console.log(res)
+            }
+        })
+    },
+
+    // 存储信息到storage 
     set() {
         wx.setStorage({
             key: 'user',
