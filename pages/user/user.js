@@ -62,11 +62,22 @@ Page({
     },
 
     // 存储信息到storage 
+    // 异步存储
     set() {
         wx.setStorage({
             key: 'user',
             data: 'cck',
+            success: ()=> {
+                console.log('存储成功');
+            }
         })
+    },
+
+    // 同步存储
+    set() {
+        try {
+            wx.setStorageSync('user', 'cck')
+        } catch (e) { }
     },
 
     // 从storage 中提取信息

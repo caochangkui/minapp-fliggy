@@ -1,5 +1,10 @@
 <!--pages/cart/cart.wxml-->
 <view class='cart' style='text-align:center;'>
 <text>购物车空空如也~~</text>
+
+<navigator url="/pages/detail/detail" open-type='navigate' style='border:1px solid red;' >进入非tab页</navigator>
+<navigator url="/pages/index/index" open-type='switchTab' >进入首页(tab页)</navigator>
+<navigator url="/pages/index/index" open-type='switchTab' >进入首页(tab页)</navigator>
+<navigator open-type='navigateBack' >回退</navigator>
     
-</view>
+</view> 

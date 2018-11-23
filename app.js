@@ -2,6 +2,9 @@
 App({
     onLaunch: function (options) {
         // 小程序初始化完成时（全局只触发一次） 
+        // 程序销毁（过一段时间没有执行，或者手动删除了小程序后再次添加）之后，再次启动就会执行
+
+        console.log('onLaunch');
 
         // 地理位置授权
         // 可以通过 wx.getSetting 先查询一下用户是否授权了 "scope.record" 这个 scope
@@ -42,9 +45,11 @@ App({
     },
     onShow: function (options) {
         // 小程序启动，或从后台进入前台显示时
+        console.log('onShow');
     },
     onHide: function () {
-        // 小程序从前台进入后台时
+        // 小程序从前台进入后台时,就会执行
+        console.log('onHide');
     },
     onError: function (msg) {
         // 小程序发生脚本错误，或者 api 调用失败时触发，会带上错误信息
