@@ -11,6 +11,7 @@ Page({
         indicatorColor: '#fedb00',
         interval: 2000,
         duration: 400,
+        activeCategoryId: 1,
         category: [
             {
                 img: "https://gw.alicdn.com/tfs/TB1DoXFwHsrBKNjSZFpXXcXhFXa-210-126.png_110x10000.jpg_.webp",
@@ -35,22 +36,27 @@ Page({
         ],
         scroll: [
             {
+                id: 1,
                 img: "https://img.alicdn.com/tfs/TB1Xk9wRFXXXXXGapXXXXXXXXXX-750-750.png_200x200q80.jpg",
                 title: '上海'
             },
             {
+                id: 2,
                 img: "https://gw.alicdn.com/imgextra/i2/2882533541/TB2IsADrcUrBKNjSZPxXXX00pXa_!!2882533541-0-wefliggy.jpg_110x10000Q75.jpg_.webp",
                 title: '成都'
             },
             {
+                id: 3,
                 img: "https://gw.alicdn.com/imgextra/i4/669272/TB2ZzvXrVXXXXadXXXXXXXXXXXX_!!0-travel.jpg_110x10000Q75.jpg_.webp",
                 title: '香港'
             },
             {
+                id: 4,
                 img: "https://gw.alicdn.com/imgextra/i1/669272/TB2mR7YspXXXXcJXpXXXXXXXXXX_!!0-travel.jpg_110x10000Q75.jpg_.webp",
                 title: '曼谷'
             },
             {
+                id: 5,
                 img: "https://gw.alicdn.com/tfs/TB17l52RFXXXXchXpXXXXXXXXXX-750-750.png_110x10000.jpg_.webp",
                 title: '丽江'
             }
@@ -61,6 +67,14 @@ Page({
     onLoad: function () {
         this.loadList();
         console.log('从app.js拿到全局变量：', getApp().globalData); 
+    },
+
+    // 点击当季旅游地
+    tabClick (e) {
+        console.log(e);
+        this.setData({
+            activeCategoryId: e.currentTarget.id
+        })
     },
 
     // 上拉加载

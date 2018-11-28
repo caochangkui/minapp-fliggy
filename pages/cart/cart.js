@@ -1,72 +1,75 @@
 // pages/cart/cart.js
 Page({
 
-  /**
-   * 页面的初始数据
-   */
-  data: {
-  
-  },
+    /**
+     * 页面的初始数据
+     */
+    data: {
+        animationData: {}
+    },
 
-  onLoad: function (options) {
-    // 监听页面加载
-    // 页面加载的时候执行，只执行一次
-    // 页面之间的相互切换，不会让页面重新加载，也就不会卸载，只会隐藏于显示页面
-    
-    console.log('页面load');
-  },
+    onLoad: function (options) {
+        // 监听页面加载
+        // 页面加载的时候执行，只执行一次
+        // 页面之间的相互切换，不会让页面重新加载，也就不会卸载，只会隐藏于显示页面
 
-  
-  onReady: function () {
-    // 监听页面第一次渲染完成
-    // 只执行一次
-
-    console.log('页面ready');
-  },
-
-  onShow: function () {
-    // 只要页面显示，就会执行
-     
-    console.log('页面show');
-  },
+        console.log('页面load');
+    },
 
 
-  onHide: function () {
-    // 页面隐藏，就会执行
-     
-    console.log('页面hide');
-  },
+    onReady: function () {
+        // 监听页面第一次渲染完成
+        // 只执行一次
 
+        console.log('页面ready');
+    },
 
-  onUnload: function () {
-    // 页面卸载，就会执行
-     
-    console.log('页面unload');
-  },
+    onShow: function () {
+        var animation = wx.createAnimation({
+            duration: 1000,
+            timingFunction: 'ease',
+            transformOrigin: 'left top 0',
+            success: function (res) {
+                console.log(res)
+            }
+        })
 
+        this.animation = animation
 
+        // animation.scale(2, 2).rotate(45).step()
 
+        // this.setData({
+        //     animationData: animation.export()
+        // })
 
-
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  }
+        // setTimeout(function () {
+        //     animation.translate(30).step()
+        //     this.setData({
+        //         animationData: animation.export()
+        //     })
+        // }.bind(this), 3000)
+    },
+    rotateAndScale: function () {
+        // 旋转同时放大
+        this.animation.rotate(45).scale(2, 2).step()
+        this.setData({
+            animationData: this.animation.export()
+        })
+    },
+    rotateThenScale: function () {
+        // 先旋转后放大
+        this.animation.rotate(85).step()
+        this.animation.scale(4, 2).step()
+        this.setData({
+            animationData: this.animation.export()
+        })
+    },
+    rotateAndScaleThenTranslate: function () {
+        // 先旋转同时放大，然后平移
+        this.animation.rotate(45).scale(2, 2).step()
+        this.animation.translate(100, 100).step({ duration: 1000 })
+        this.setData({
+            animationData: this.animation.export()
+        })
+    }
 })

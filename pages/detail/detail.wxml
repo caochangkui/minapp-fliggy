@@ -60,10 +60,21 @@
         </view>
         <view class='right'>
             <view class='in'>加入购物车</view>
-            <view class='buy'>立即购买</view>
+            <view class='buy' bindtap='showBuyModal'>立即购买</view>
         </view>
-
     </view>
-
-
+    
+    <!-- 立即购买弹出购买遮罩 -->
+    <view class="cover_screen" bindtap="hideBuyModal" wx:if="{{showModalStatus}}"></view>
+    <!-- 立即购买弹窗 -->
+    <view animation="{{animationData}}" class="buy_box" wx:if="{{showModalStatus}}">
+        <view class='title'>{{detail.detail.title}} <text style='color:red;'>￥{{detail.price}}</text> </view>
+        <view class='num'>
+            <text style='padding-right:40rpx;'>购买数量：</text>
+            <text class='set' bindtap='delete' >-</text>
+            <text class='set'>{{buyNum}}</text>
+            <text class='set' bindtap='plus'>+</text>
+        </view>
+        <button type="primary" bindtap="primary" bindtap='hideBuyModal'> 确定 </button>
+    </view>
 </view>

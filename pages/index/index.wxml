@@ -24,7 +24,7 @@
             <text class='more'>探索更好目的地 > </text>
         </view>
         <scroll-view class="scroll-view" scroll-x >
-            <view wx:for='{{scroll}}' wx:key='{{index}}'>
+            <view wx:for='{{scroll}}' wx:key='{{index}}' id='{{item.id}}'  class='type-navbar-item {{activeCategoryId == item.id ? "type-item-on" : ""}}' bindtap='tabClick'>
                 <image src='{{item.img}}'></image>
                 <text>{{item.title}}</text>
             </view>  

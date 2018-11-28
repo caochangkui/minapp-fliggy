@@ -6,7 +6,9 @@ Page({
      */
     data: {
         detail: {},
-        loading: true
+        loading: true,
+        buyNum: 1,
+        showModalStatus: false
     },
 
     /**
@@ -36,6 +38,66 @@ Page({
                 wx.hideLoading();
             }
         })
+    },
+
+    plus () {
+        let num = this.data.buyNum;
+        num++;
+        this.setData({
+            buyNum: num
+        })
+    },
+
+    delete () {
+        let num = this.data.buyNum;
+        if(num > 1) {
+            num--;
+        } 
+        this.setData({
+            buyNum: num
+        })
+    },
+    showBuyModal () {
+        // 显示遮罩层
+        var animation = wx.createAnimation({
+            duration: 200,
+            timingFunction: "ease",
+            delay: 0
+        })
+        this.animation = animation
+        animation.translateY(300).step()
+        this.setData({
+            animationData: animation.export(), // export 方法每次调用后会清掉之前的动画操作。
+            showModalStatus: true
+        })
+        setTimeout(() => {
+            animation.translateY(0).step()
+            this.setData({
+                animationData: animation.export()
+            })
+            console.log(this)
+        }, 200)
+    },
+    hideBuyModal () {
+        // 隐藏遮罩层
+        var animation = wx.createAnimation({
+            duration: 200,
+            timingFunction: "ease",
+            delay: 0
+        })
+        this.animation = animation
+        animation.translateY(300).step()
+        this.setData({
+            animationData: animation.export(),
+        })
+        setTimeout(function () {
+            animation.translateY(0).step()
+            this.setData({
+                animationData: animation.export(),
+                showModalStatus: false
+            })
+            console.log(this)
+        }.bind(this), 200)
     },
 
     /**

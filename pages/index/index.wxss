@@ -138,9 +138,13 @@ swiper {
     font-size: 24rpx;
     color: red;
 }
+.type-navbar-item text {
+    border-bottom: 4rpx solid #fff;
+}
 
-
-
+.type-item-on text{
+  border-bottom: 4rpx solid #c97276;
+}
 
 
 
